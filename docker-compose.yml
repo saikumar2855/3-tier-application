@@ -1,12 +1,14 @@
 version: '3.8'
 services:
-  backend:
-    build: ./backend
+  user-service:
+    build: ./user-service
     ports:
-      - "5000:5000"
-  frontend:
-    build: ./frontend
+      - "5001:5000"
+  product-service:
+    build: ./product-service
     ports:
-      - "3000:80"
-    depends_on:
-      - backend
+      - "5002:5000"
+  order-service:
+    build: ./order-service
+    ports:
+      - "5003:5000"
